@@ -17,6 +17,11 @@ export default createGlobalStyle`
     align-items: center;
     background-color: #111;
   }
+
+  a {
+    color: #b1b1b1;
+    text-decoration: none;
+  }
 `;
 
 export const Page = styled.div`

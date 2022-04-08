@@ -25,6 +25,7 @@ module.exports = {
     "import/extensions": "off",
     "react/jsx-props-no-spreading": "off",
     "arrow-body-style": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-filename-extension": [
       1,
       { extensions: [".js", ".jsx", ".tsx", ".ts", ".d.ts"] },
