@@ -14,9 +14,6 @@ export default function Home(): JSX.Element {
       <Head>
         <title>Home | Arthur Sena</title>
       </Head>
-      <h1>
-        SITE DO <a href="https://linkedin.com/in/senaarth">SENAARTH</a>
-      </h1>
     </Page>
   );
 }
