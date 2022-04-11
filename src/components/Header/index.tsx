@@ -14,10 +14,10 @@ export function Header() {
           <img src="/images/logo.png" alt="Logo Arthur Sena" />
         </a>
         <Navigation className={menuOpen ? "visible" : ""}>
-          <NavLink href="/" label="HOME" />
-          <NavLink href="/projetos" label="PROJETOS" />
-          <NavLink href="/contato" label="CONTATO" />
-          <NavLink href="/sobre" label="SOBRE" />
+          <NavLink href="/" label="Home" />
+          <NavLink href="/projetos" label="Projetos" />
+          <NavLink href="/contato" label="Contato" />
+          <NavLink href="/sobre" label="Sobre" />
         </Navigation>
         <Hamburger
           className={menuOpen ? "close" : ""}

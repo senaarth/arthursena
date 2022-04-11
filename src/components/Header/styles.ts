@@ -58,8 +58,9 @@ export const Navigation = styled.nav`
     align-items: center;
 
     color: #b1b1b1;
-    font-size: 0.95rem;
-    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1px;
     text-transform: capitalize;
 
     padding: 0 1.25rem;
@@ -157,7 +158,6 @@ export const Hamburger = styled.button`
   transition: background-color 0.3s !important;
 
   &:hover {
-    background-color: #2e2e2e;
     filter: brightness(1) !important;
     cursor: pointer;
   }
