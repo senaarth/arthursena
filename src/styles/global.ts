@@ -22,6 +22,10 @@ export default createGlobalStyle`
     color: #b1b1b1;
     text-decoration: none;
   }
+
+  .grayscale {
+    filter: grayscale(1);
+  }
 `;
 
 export const Page = styled.div`

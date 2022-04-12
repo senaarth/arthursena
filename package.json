@@ -12,13 +12,24 @@
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js",
     "format": "prettier --write .",
-    "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build"
+    "test-all": "yarn check-format && yarn check-lint && yarn check-types && yarn build",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.1",
+    "@mui/styled-engine-sc": "^5.6.1",
+    "@prismicio/client": "^6.4.2",
+    "@prismicio/helpers": "^2.2.1",
+    "@prismicio/next": "^0.1.2",
+    "@prismicio/react": "^2.2.0",
+    "@prismicio/slice-simulator-react": "^0.2.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "styled-components": "^5.3.1",
+    "slice-machine-ui": "^0.3.5",
+    "styled-components": "^5.3.5",
     "typed.js": "^2.0.12"
   },
   "devDependencies": {

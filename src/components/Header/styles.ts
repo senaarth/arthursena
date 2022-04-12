@@ -7,13 +7,16 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-self: center;
-
-  background-color: rgba(17, 17, 17, 0.8);
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
   border-bottom: 1px solid #242424;
+  background-color: rgba(17, 17, 17, 1);
 
   position: fixed;
+
+  @media (min-width: 720px) {
+    background-color: rgba(17, 17, 17, 0.8);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+  }
 `;
 
 export const ContentContainer = styled.header`
@@ -98,9 +101,9 @@ export const Navigation = styled.nav`
 
     flex-direction: column;
 
-    background-color: rgba(17, 17, 17, 0.8);
-    -webkit-backdrop-filter: blur(24px);
-    backdrop-filter: blur(24px);
+    background-color: rgba(17, 17, 17, 1);
+    /* -webkit-backdrop-filter: blur(24px); */
+    /* backdrop-filter: blur(24px); */
     border-bottom: 1px solid #242424;
     border-left: 1px solid #242424;
 

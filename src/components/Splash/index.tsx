@@ -14,10 +14,10 @@ export function Splash() {
     const typed = new Typed(el?.current, {
       onComplete: () => setAnimation(true),
       strings: ["SenaArth", "Desenvolvedor", ""],
-      startDelay: 300,
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 400,
+      startDelay: 0,
+      typeSpeed: 40,
+      backSpeed: 40,
+      backDelay: 40,
       loop: false,
       showCursor: false,
     });
@@ -51,14 +51,14 @@ export function Splash() {
         () => {
           setFade(true);
         },
-        lastSplash > 5 || lastSplash === null ? 2000 : 800
+        lastSplash > 5 || lastSplash === null ? 600 : 600
       );
 
       setTimeout(
         () => {
           setFinished(true);
         },
-        lastSplash > 5 || lastSplash === null ? 3000 : 1200
+        lastSplash > 5 || lastSplash === null ? 900 : 800
       );
 
       if (lastSplash > 5 || lastSplash === null) {

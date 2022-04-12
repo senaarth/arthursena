@@ -32,8 +32,8 @@ export const Container = styled.div`
   }
 
   span.zoom {
-    -webkit-animation: zoom 2s forwards;
-    animation: zoom 2s forwards;
+    -webkit-animation: zoom 0.6s forwards;
+    animation: zoom 0.6s forwards;
   }
 
   span.rotate {
