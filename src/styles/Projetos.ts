@@ -11,20 +11,19 @@ export const Container = styled.div`
   justify-content: center;
 
   margin-top: 5rem;
-  padding: 3rem 0;
+  padding: 2rem 0;
 
   > h1 {
     font-weight: 600;
     color: white;
-    font-size: 2.5rem;
-    line-height: 2.75rem;
+    font-size: 2em;
   }
 
   > h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #b1b1b1;
-    font-weight: 500;
-    margin-bottom: 3rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
     text-align: center;
   }
 

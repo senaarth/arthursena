@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 16px;
 
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   min-height: 8rem;
 
   .banner {
