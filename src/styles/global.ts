@@ -48,7 +48,7 @@ export const Page = styled.div`
 
   > h1 {
     font-weight: 600;
-    color: #b1b1b1;
+    color: white;
   }
 
   .mail-call {

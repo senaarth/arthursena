@@ -76,8 +76,12 @@ export const Hero = styled.div`
         }
 
         &.filled {
-          background-color: #2e2e2e;
-          color: #f6f6f6;
+          background-color: white;
+          color: #111;
+
+          &:hover {
+            filter: brightness(0.8);
+          }
         }
 
         &.link {
