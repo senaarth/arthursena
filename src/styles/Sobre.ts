@@ -93,7 +93,7 @@ export const Avatar = styled.div`
       margin-top: 0.25rem;
       color: white;
       font-size: 1.125rem;
-      line-height: 1.125rem;
+      line-height: 1.6875rem;
       font-weight: 500;
     }
 
@@ -103,7 +103,7 @@ export const Avatar = styled.div`
     }
 
     .social-media {
-      margin: 0.625rem 0 0;
+      margin: 1rem 0 0;
       display: flex;
       flex-direction: row;
       align-items: center;

@@ -46,7 +46,7 @@ export default function Sobre({ content }: SobreProps): JSX.Element {
       strings: content.typed || [],
       typeSpeed: 50,
       backSpeed: 50,
-      backDelay: 70,
+      backDelay: 120,
       loop: true,
       showCursor: false,
     });

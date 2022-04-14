@@ -14,10 +14,18 @@ export function Header() {
           <img src="/images/logo.png" alt="Logo Arthur Sena" />
         </a>
         <Navigation className={menuOpen ? "visible" : ""}>
-          <NavLink href="/" label="Home" />
-          <NavLink href="/projetos" label="Projetos" />
-          <NavLink href="/contato" label="Contato" />
-          <NavLink href="/sobre" label="Sobre" />
+          <NavLink onClick={() => setMenu(false)} href="/" label="Home" />
+          <NavLink
+            onClick={() => setMenu(false)}
+            href="/projetos"
+            label="Projetos"
+          />
+          <NavLink
+            onClick={() => setMenu(false)}
+            href="/contato"
+            label="Contato"
+          />
+          <NavLink onClick={() => setMenu(false)} href="/sobre" label="Sobre" />
         </Navigation>
         <Hamburger
           className={menuOpen ? "close" : ""}
