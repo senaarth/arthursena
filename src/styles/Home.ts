@@ -34,7 +34,7 @@ export const Hero = styled.div`
     h1 {
       font-size: 3.5rem;
       line-height: 3.5rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 2px;
       color: white;
     }

@@ -4,25 +4,34 @@ import { PrismicRichText } from "@prismicio/react";
 import { Container } from "./styles";
 
 interface CardProps {
+  slug: string;
   name: string;
   link: string;
   description: [];
   banner: string;
 }
 
-export function ProjectCard({ name, link, description, banner }: CardProps) {
+export function ProjectCard({
+  slug,
+  name,
+  link,
+  description,
+  banner,
+}: CardProps) {
   return (
     <Container>
       <img src={banner} alt={`Banner do projeto ${name}`} className="banner" />
       <div>
-        <h1>{name}</h1>
-        <PrismicRichText field={description} />
-        <a href={link} className="link" target="_blank" rel="noreferrer">
-          visitar
+        <a href={link} target="_blank" rel="noreferrer" className="title">
+          {name}
           <img
-            src="https://daleanthony.com/assets/img/icons/icon-external-link.svg"
-            alt=""
+            src="/images/up-right-arrow.png"
+            alt="Seta apontando para a direito e para cimaa"
           />
+        </a>
+        <PrismicRichText field={description} />
+        <a href={`/projetos/${slug}`} className="saiba-mais">
+          saiba mais
         </a>
       </div>
     </Container>

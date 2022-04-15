@@ -87,6 +87,7 @@ export const Avatar = styled.div`
       margin-top: 0;
       font-size: 2rem;
       line-height: 2rem;
+      font-weight: 500;
     }
 
     h2 {
@@ -94,7 +95,7 @@ export const Avatar = styled.div`
       color: white;
       font-size: 1.125rem;
       line-height: 1.6875rem;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     span {

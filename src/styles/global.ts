@@ -47,7 +47,7 @@ export const Page = styled.div`
   justify-content: center;
 
   > h1 {
-    font-weight: 600;
+    font-weight: 500;
     color: white;
   }
 

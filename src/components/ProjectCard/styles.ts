@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 700px;
-  min-height: 8rem;
+  min-height: 9rem;
 
   .banner {
     width: 100%;
@@ -18,7 +18,7 @@ export const Container = styled.div`
     border-radius: 16px 0 0 16px;
   }
 
-  div {
+  > div {
     flex: 1;
 
     display: flex;
@@ -28,9 +28,38 @@ export const Container = styled.div`
 
     padding: 1.5rem;
 
-    h1 {
+    .title {
       font-size: 1.5rem;
       color: white;
+      display: flex;
+
+      transition: filter 0.3s;
+      position: relative;
+
+      &::after {
+        width: 0;
+        transition: width 0.3s;
+        height: 1px;
+        background-color: white;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+      }
+
+      &:hover {
+        filter: brightness(0.7);
+
+        &::after {
+          width: calc(100% - 1.25rem);
+        }
+      }
+
+      img {
+        width: 0.75rem;
+        margin-left: 0.5rem;
+        object-fit: contain;
+      }
 
       @media (max-width: 520px) {
         font-size: 1rem;
@@ -47,21 +76,36 @@ export const Container = styled.div`
       }
     }
 
-    .link {
-      font-size: 1rem;
-      color: rgb(108, 108, 108);
-      display: flex;
+    .saiba-mais {
+      font-size: 0.85rem;
+      color: #b1b1b1;
       margin-top: 0.5rem;
 
-      transition: filter 0.4s;
+      transition: filter 0.3s;
+
+      &::after {
+        width: 0;
+        transition: width 0.3s;
+        height: 1px;
+        background-color: white;
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2px;
+      }
 
       &:hover {
         filter: brightness(1.5);
+
+        &::after {
+          width: 100%;
+        }
       }
 
-      img {
-        width: 0.75rem;
-        margin-left: 0.5rem;
+      @media (min-width: 520px) {
+        margin-top: 1rem;
+        margin-left: auto;
       }
     }
   }
