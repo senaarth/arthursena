@@ -20,11 +20,6 @@ export function Header() {
             href="/projetos"
             label="Projetos"
           />
-          <NavLink
-            onClick={() => setMenu(false)}
-            href="/contato"
-            label="Contato"
-          />
           <NavLink onClick={() => setMenu(false)} href="/sobre" label="Sobre" />
         </Navigation>
         <Hamburger

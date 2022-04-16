@@ -2,15 +2,14 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from "react";
-import Head from "next/head";
 import { TextField } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import { Page } from "../styles/global";
-import { Wrapper } from "../styles/Contato";
+import { Page } from "../../styles/global";
+import { Wrapper } from "./styles";
 
 /**
  * Contato Page
@@ -191,11 +190,8 @@ export default function Contato(): JSX.Element {
   }, [mailCall]);
 
   return (
-    <Page>
-      <Head>
-        <title>Contato | Arthur Sena</title>
-      </Head>
-      <h1>ENTRE EM CONTATO</h1>
+    <Page style={{ marginTop: 0 }}>
+      <h1>Entre em Contato</h1>
       <p className="mail-call">
         {mailCall || (
           <>

@@ -6,7 +6,9 @@ import { Tooltip } from "@mui/material";
 import { createClient } from "../../prismicio";
 
 import { Page } from "../styles/global";
-import { Hero } from "../styles/Home";
+import { Hero, Projects } from "../styles/Home";
+import { ProjectCard } from "../components/ProjectCard";
+import Contato from "../components/Contato";
 
 type SocialItem = {
   name: string;
@@ -22,8 +24,17 @@ type Content = {
   social: SocialItem[];
 };
 
+type Project = {
+  slug: string;
+  name: string;
+  link: string;
+  description: [];
+  banner: string;
+  place: number;
+};
 interface HomeProps {
   content: Content;
+  projects: Project[];
 }
 
 /**
@@ -31,7 +42,7 @@ interface HomeProps {
  * @return {JSX.Element}
  */
 
-export default function Home({ content }: HomeProps): JSX.Element {
+export default function Home({ content, projects }: HomeProps): JSX.Element {
   return (
     <Page>
       <Head>
@@ -43,12 +54,28 @@ export default function Home({ content }: HomeProps): JSX.Element {
           <h1>{content?.title}</h1>
           <PrismicRichText field={content?.description} />
           <div>
-            <a href="/contato" className="filled">
+            <button
+              type="button"
+              onClick={() => {
+                const contato = document.querySelector("#contato");
+
+                contato.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="filled"
+            >
               Entrar em contato
-            </a>
-            <a href="/projetos" className="outlined">
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const projetos = document.querySelector("#projetos");
+
+                projetos.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="outlined"
+            >
               Meus Projetos
-            </a>
+            </button>
             <a href="/sobre" className="link">
               Sobre mim
             </a>
@@ -69,6 +96,15 @@ export default function Home({ content }: HomeProps): JSX.Element {
           </div>
         </div>
       </Hero>
+      <span id="projetos" style={{ height: "7rem", marginTop: "-5rem" }} />
+      <Projects>
+        <h1>Meus Projetos</h1>
+        {projects.map((item, index) => {
+          return <ProjectCard key={item.slug} {...item} isLast={index === 2} />;
+        })}
+      </Projects>
+      <span id="contato" style={{ height: "7rem", marginTop: "-5rem" }} />
+      <Contato />
     </Page>
   );
 }
@@ -89,7 +125,23 @@ export async function getServerSideProps({ previewData }) {
     }),
   };
 
+  const projectsRes = await client.getAllByType("project");
+
+  const projects = projectsRes.map(({ uid, data: projectsData }) => {
+    return {
+      slug: uid,
+      name: projectsData.name,
+      link: projectsData.link,
+      description: projectsData.description,
+      banner: projectsData.banner.url,
+      place: projectsData.place,
+    };
+  });
+
+  projects.sort((a, b) => a.place - b.place);
+  projects.splice(-1, projects.length - 3);
+
   return {
-    props: { content },
+    props: { content, projects },
   };
 }

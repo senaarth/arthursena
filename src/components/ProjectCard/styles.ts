@@ -10,6 +10,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: 700px;
   min-height: 9rem;
+  position: relative;
 
   .banner {
     width: 100%;
@@ -106,6 +107,50 @@ export const Container = styled.div`
       @media (min-width: 520px) {
         margin-top: 1rem;
         margin-left: auto;
+      }
+    }
+  }
+
+  .list-call {
+    position: absolute;
+    background: linear-gradient(180deg, transparent, #111, #111, #111);
+    width: calc(100% + 2px);
+    height: 100%;
+    bottom: -1px;
+    left: -1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      font-size: 1.25rem;
+      color: #b1b1b1;
+      margin-top: 3rem;
+
+      transition: filter 0.3s;
+
+      cursor: pointer;
+
+      &::after {
+        width: 0;
+        transition: width 0.3s;
+        height: 1px;
+        background-color: white;
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2px;
+      }
+
+      &:hover {
+        filter: brightness(1.5);
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }

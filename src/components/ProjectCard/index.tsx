@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
 
@@ -9,6 +10,7 @@ interface CardProps {
   link: string;
   description: [];
   banner: string;
+  isLast?: boolean;
 }
 
 export function ProjectCard({
@@ -17,6 +19,7 @@ export function ProjectCard({
   link,
   description,
   banner,
+  isLast = false,
 }: CardProps) {
   return (
     <Container>
@@ -34,6 +37,11 @@ export function ProjectCard({
           saiba mais
         </a>
       </div>
+      {isLast && (
+        <span className="list-call">
+          <a href="/projetos">ver lista completa</a>
+        </span>
+      )}
     </Container>
   );
 }

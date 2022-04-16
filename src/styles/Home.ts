@@ -65,6 +65,9 @@ export const Hero = styled.div`
         text-align: center;
         color: #b1b1b1;
         transition: filter 0.3s;
+        cursor: pointer;
+        border: 0;
+        outline: none;
 
         &:hover {
           filter: brightness(1.5);
@@ -145,5 +148,32 @@ export const Hero = styled.div`
         display: none;
       }
     }
+  }
+`;
+
+export const Projects = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  max-width: 1120px;
+
+  padding: 3rem 0;
+
+  border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+
+  > h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: white;
+  }
+
+  > * + * {
+    margin-top: 1.5rem;
   }
 `;
