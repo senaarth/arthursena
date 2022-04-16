@@ -10,7 +10,7 @@ type Project = {
   slug: string;
   name: string;
   link: string;
-  description: [];
+  call: [];
   banner: string;
   place: number;
 };
@@ -49,7 +49,7 @@ export async function getServerSideProps({ previewData }) {
       slug: uid,
       name: data.name,
       link: data.link,
-      description: data.description,
+      call: data.call,
       banner: data.banner.url,
       place: data.place,
     };

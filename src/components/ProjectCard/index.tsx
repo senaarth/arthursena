@@ -8,7 +8,7 @@ interface CardProps {
   slug: string;
   name: string;
   link: string;
-  description: [];
+  call: [];
   banner: string;
   isLast?: boolean;
 }
@@ -17,7 +17,7 @@ export function ProjectCard({
   slug,
   name,
   link,
-  description,
+  call,
   banner,
   isLast = false,
 }: CardProps) {
@@ -32,7 +32,7 @@ export function ProjectCard({
             alt="Seta apontando para a direito e para cimaa"
           />
         </a>
-        <PrismicRichText field={description} />
+        <PrismicRichText field={call} />
         <a href={`/projetos/${slug}`} className="saiba-mais">
           saiba mais
         </a>
