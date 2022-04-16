@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1.5fr 3.5fr;
+  grid-template-columns: 2fr 3fr;
 
   border: 1px solid #2e2e2e;
   border-radius: 16px;
@@ -44,7 +44,8 @@ export const Container = styled.div`
         background-color: white;
         content: "";
         position: absolute;
-        left: 0;
+        left: 50%;
+        transform: translateX(calc(-50% - 0.625rem));
         bottom: 2px;
       }
 

@@ -13,7 +13,7 @@ export function Splash() {
   React.useEffect(() => {
     const typed = new Typed(el?.current, {
       onComplete: () => setAnimation(true),
-      strings: ["SenaArth", "Desenvolvedor", ""],
+      strings: ["SenaArth", "Dev", ""],
       startDelay: 0,
       typeSpeed: 40,
       backSpeed: 40,

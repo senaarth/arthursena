@@ -6,6 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Exo', sans-serif;
+    position: relative;
   }
 
   html, body, #__next {

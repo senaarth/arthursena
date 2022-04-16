@@ -6,6 +6,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { linkResolver, repositoryName } from "../../prismicio";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { Splash } from "../components/Splash";
 
 import GlobalStyle from "../styles/global";
@@ -23,6 +24,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <PrismicPreview repositoryName={repositoryName}>
         <Header />
         <Component {...pageProps} />
+        <Footer />
         <Splash />
         <GlobalStyle />
       </PrismicPreview>

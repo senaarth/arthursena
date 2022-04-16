@@ -68,6 +68,9 @@ export const Hero = styled.div`
         cursor: pointer;
         border: 0;
         outline: none;
+        text-transform: lowercase;
+        font-weight: 500;
+        font-size: 1rem;
 
         &:hover {
           filter: brightness(1.5);
@@ -90,7 +93,18 @@ export const Hero = styled.div`
         &.link {
           border: 0;
           background-color: transparent;
-          text-decoration: underline;
+          width: 5.15rem;
+          margin: auto;
+          border: 1px solid transparent;
+
+          transition: all 0.4s;
+
+          &:hover {
+            background-color: #242424;
+            border: 1px solid #242424;
+            width: 100%;
+            filter: brightness(1);
+          }
         }
       }
     }

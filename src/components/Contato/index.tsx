@@ -65,6 +65,7 @@ const Button = styled(LoadingButton)({
   cursor: "pointer",
   fontWeight: 500,
   backgroundColor: "transparent",
+  textTransform: "lowercase",
   transition: "all 0.4s",
   color: "#b1b1b1 !important",
   fontSize: "1rem",
@@ -215,7 +216,7 @@ export default function Contato(): JSX.Element {
           value={name}
           className={validation?.name ? "Mui-error" : "Mui-valid"}
           error={validation?.name}
-          helperText={validation?.name ? "Campo obrigatório" : ""}
+          helperText={validation?.name ? "campo obrigatório" : ""}
           onChange={({ target }) => {
             setName(target.value);
             setValidation({
@@ -239,7 +240,7 @@ export default function Contato(): JSX.Element {
           value={email}
           className={validation?.email ? "Mui-error" : "Mui-valid"}
           error={validation?.email}
-          helperText={validation?.email ? "Campo obrigatório" : ""}
+          helperText={validation?.email ? "campo obrigatório" : ""}
           onChange={({ target }) => {
             setEmail(target.value);
           }}
@@ -260,7 +261,7 @@ export default function Contato(): JSX.Element {
         value={message}
         className={validation?.message ? "Mui-error" : "Mui-valid"}
         error={validation?.message}
-        helperText={validation?.message ? "Campo obrigatório" : ""}
+        helperText={validation?.message ? "campo obrigatório" : ""}
         onChange={({ target }) => {
           setMessage(target.value);
           setValidation({
@@ -287,7 +288,7 @@ export default function Contato(): JSX.Element {
             color: "#b1b1b1",
             maxWidth: "90%",
             textAlign: "center",
-            textTransform: "uppercase",
+            textTransform: "lowercase",
           }}
         >
           {msg}
