@@ -86,6 +86,7 @@ export const Navigation = styled.nav`
 
     &.active {
       cursor: default;
+      pointer-events: none;
     }
   }
 

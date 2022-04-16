@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface NavLinkProps {
   href: string;
@@ -12,16 +13,16 @@ export function NavLink({ href, label, onClick }: NavLinkProps) {
   const path = router.asPath;
 
   return (
-    <button
-      type="button"
-      className={path === href ? "active" : ""}
-      onClick={() => {
-        router.push(href);
-        onClick();
-      }}
-      disabled={path === href}
-    >
-      {label}
-    </button>
+    <Link href={href} prefetch={false} passHref>
+      <button
+        type="button"
+        className={path === href ? "active" : ""}
+        onClick={() => {
+          onClick();
+        }}
+      >
+        {label}
+      </button>
+    </Link>
   );
 }
