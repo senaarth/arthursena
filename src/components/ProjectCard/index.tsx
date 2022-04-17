@@ -2,12 +2,11 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
 
-import { Container } from "./styles";
+import { Card, Container } from "./styles";
 
 interface CardProps {
   slug: string;
   name: string;
-  link: string;
   call: [];
   banner: string;
   isLast?: boolean;
@@ -16,27 +15,27 @@ interface CardProps {
 export function ProjectCard({
   slug,
   name,
-  link,
   call,
   banner,
   isLast = false,
 }: CardProps) {
   return (
     <Container>
-      <img src={banner} alt={`Banner do projeto ${name}`} className="banner" />
-      <div>
-        <a href={link} target="_blank" rel="noreferrer" className="title">
-          {name}
-          <img
-            src="/images/up-right-arrow.png"
-            alt="Seta apontando para a direito e para cimaa"
-          />
-        </a>
-        <PrismicRichText field={call} />
-        <a href={`/projetos/${slug}`} className="saiba-mais">
-          saiba mais
-        </a>
-      </div>
+      <Card href={`/projetos/${slug}`}>
+        <img
+          src={banner}
+          alt={`Banner do projeto ${name}`}
+          className="banner"
+        />
+        <div>
+          <h1 className="title">{name}</h1>
+          <PrismicRichText field={call} />
+          <a href={`/projetos/${slug}`} className="saiba-mais">
+            saiba mais
+          </a>
+          {!isLast && <span className="background" />}
+        </div>
+      </Card>
       {isLast && (
         <span className="list-call">
           <a href="/projetos">ver lista completa</a>

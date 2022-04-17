@@ -22,6 +22,7 @@ export function NavLink({ href, label, onClick }: NavLinkProps) {
         }}
       >
         {label}
+        <span className="background" />
       </button>
     </Link>
   );

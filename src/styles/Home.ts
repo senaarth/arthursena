@@ -162,9 +162,7 @@ export const Hero = styled.div`
     }
 
     @media (max-width: 1024px) {
-      > img {
-        display: none;
-      }
+      display: none;
     }
   }
 `;

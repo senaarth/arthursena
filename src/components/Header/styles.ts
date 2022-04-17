@@ -77,11 +77,28 @@ export const Navigation = styled.nav`
     background-color: transparent;
     cursor: pointer;
 
+    .background {
+      width: 0;
+      height: 100%;
+
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #2e2e2e;
+
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
     &:hover,
     &.active {
       filter: brightness(1);
       color: #f6f6f6;
-      background-color: #2e2e2e;
+
+      .background {
+        width: 100%;
+        border-radius: 6px;
+      }
     }
 
     &.active {
