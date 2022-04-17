@@ -43,6 +43,10 @@ export const Hero = styled.div`
       font-size: 1rem;
       line-height: 1.5rem;
       color: #b1b1b1;
+
+      strong {
+        color: white;
+      }
     }
 
     div {

@@ -32,10 +32,14 @@ interface ProjectProps {
 export default function Projeto({ project }: ProjectProps) {
   const router = useRouter();
 
+  React.useEffect(() => {
+    if (!project) router.push("/projetos");
+  }, []);
+
   return (
     <Page>
       <Head>
-        <title>{`${project.name || "Projeto"} | Arthur Sena`}</title>
+        <title>{`${project?.name || "Projeto"} | Arthur Sena`}</title>
       </Head>
       <Container>
         <div className="back">
@@ -45,25 +49,25 @@ export default function Projeto({ project }: ProjectProps) {
         </div>
         <a
           className="title"
-          href={project.link}
+          href={project?.link}
           target="_blank"
           rel="noreferrer"
         >
-          {project.name}
+          {project?.name}
           <img
             src="/images/up-right-arrow.png"
             alt="Seta apontando para a direito e para cimaa"
           />
         </a>
         <PrismicRichText
-          field={project.description}
+          field={project?.description}
           components={{
             paragraph: ({ children }) => <p className="desc">{children}</p>,
           }}
         />
         <h1>Tecnologias Utilizadas</h1>
         <ToolsContainer>
-          {project.tools?.map((item) => {
+          {project?.tools?.map((item) => {
             return (
               <Tooltip title={item?.tool_name} key={item?.tool_name}>
                 <div>
@@ -75,7 +79,7 @@ export default function Projeto({ project }: ProjectProps) {
         </ToolsContainer>
         <img
           src={project?.banner}
-          alt={`Banner ${project.name}`}
+          alt={`Banner ${project?.name}`}
           className="banner"
         />
       </Container>
@@ -83,26 +87,55 @@ export default function Projeto({ project }: ProjectProps) {
   );
 }
 
-export async function getServerSideProps({ previewData, params }) {
+export const getStaticPaths = async ({ previewData }) => {
   const client = createClient({ previewData });
+  const projects = await client.getAllByType("project");
 
-  const { slug } = params;
-  const { data: project } = await client.getByUID("project", slug, {
-    ref: null,
+  const paths = projects.map((project) => {
+    return {
+      params: {
+        slug: project?.uid,
+      },
+    };
   });
 
   return {
-    props: {
-      project: {
-        ...project,
-        banner: project.banner.url,
-        tools: project.tools.map((item) => {
+    paths,
+    fallback: true,
+  };
+};
+
+export async function getStaticProps({ previewData, params }) {
+  const client = createClient({ previewData });
+
+  const { slug } = params;
+  let project;
+
+  try {
+    const { data } = await client.getByUID("project", slug, {
+      ref: null,
+    });
+
+    if (!data) throw new Error();
+
+    project = {
+      ...data,
+      banner: data?.banner?.url || null,
+      tools:
+        data?.tools?.map((item) => {
           return {
             ...item,
             tool_icon: item.tool_icon.url,
           };
-        }),
-      },
+        }) || null,
+    };
+  } catch {
+    project = null;
+  }
+
+  return {
+    props: {
+      project,
     },
   };
 }

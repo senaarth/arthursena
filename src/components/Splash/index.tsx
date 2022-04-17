@@ -17,7 +17,7 @@ export function Splash() {
       startDelay: 0,
       typeSpeed: 40,
       backSpeed: 40,
-      backDelay: 40,
+      backDelay: 80,
       loop: false,
       showCursor: false,
     });
@@ -42,7 +42,7 @@ export function Splash() {
 
     setLastSplash(Math.abs(Math.round(diff)));
 
-    if (Math.abs(Math.round(diff)) < 5) setAnimation(true);
+    if (Math.abs(Math.round(diff)) < 10) setAnimation(true);
   }, []);
 
   React.useEffect(() => {
@@ -51,17 +51,17 @@ export function Splash() {
         () => {
           setFade(true);
         },
-        lastSplash > 5 || lastSplash === null ? 600 : 600
+        lastSplash > 10 || lastSplash === null ? 600 : 600
       );
 
       setTimeout(
         () => {
           setFinished(true);
         },
-        lastSplash > 5 || lastSplash === null ? 900 : 800
+        lastSplash > 10 || lastSplash === null ? 900 : 800
       );
 
-      if (lastSplash > 5 || lastSplash === null) {
+      if (lastSplash > 10 || lastSplash === null) {
         localStorage.setItem("@Sena:lastTime", JSON.stringify(new Date()));
       }
     }
@@ -72,12 +72,12 @@ export function Splash() {
       <span
         className={
           animation
-            ? `${lastSplash > 5 || lastSplash === null ? "zoom" : "rotate"}`
+            ? `${lastSplash > 10 || lastSplash === null ? "zoom" : "rotate"}`
             : ""
         }
       >
         {"<"}
-        {(lastSplash > 5 || lastSplash === null) && <span ref={el} />}
+        {(lastSplash > 10 || lastSplash === null) && <span ref={el} />}
         {"/>"}
       </span>
     </Container>

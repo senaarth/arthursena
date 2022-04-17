@@ -96,7 +96,7 @@ export default function Home({ content, projects }: HomeProps): JSX.Element {
           </div>
         </div>
       </Hero>
-      <span id="projetos" style={{ height: "7rem", marginTop: "-5rem" }} />
+      <span id="projetos" style={{ height: "5rem", marginTop: "-3rem" }} />
       <Projects>
         <h1>Meus Projetos</h1>
         {projects.map((item, index) => {
