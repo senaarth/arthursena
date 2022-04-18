@@ -64,6 +64,7 @@ export default function Home({ content, projects }: HomeProps): JSX.Element {
               className="filled"
             >
               Entrar em contato
+              <span className="background" />
             </button>
             <button
               type="button"
@@ -75,6 +76,7 @@ export default function Home({ content, projects }: HomeProps): JSX.Element {
               className="outlined"
             >
               Meus Projetos
+              <span className="background" />
             </button>
             <a href="/sobre" className="link">
               Sobre mim

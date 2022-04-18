@@ -76,13 +76,30 @@ export const Hero = styled.div`
         font-weight: 500;
         font-size: 1rem;
 
-        &:hover {
-          filter: brightness(1.5);
+        .background {
+          width: 0;
+          height: 100%;
+
+          position: absolute !important;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: rgba(255, 255, 255, 0.05);
+
+          transition: all 0.3s;
+          z-index: -1;
         }
 
         &.outlined {
           border: 1.25px solid #b1b1b1;
           background-color: transparent;
+
+          &:hover {
+            filter: brightness(1.5);
+
+            .background {
+              width: 100%;
+            }
+          }
         }
 
         &.filled {
@@ -91,6 +108,12 @@ export const Hero = styled.div`
 
           &:hover {
             filter: brightness(0.8);
+
+            .background {
+              background-color: #b1b1b1;
+              width: 100%;
+              opacity: 0.1;
+            }
           }
         }
 
