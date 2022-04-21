@@ -62,7 +62,7 @@ export const Hero = styled.div`
 
       * {
         width: 100%;
-        height: 50px;
+        min-height: 50px;
         border-radius: 6px;
         background-color: white;
         line-height: 50px;
@@ -75,12 +75,14 @@ export const Hero = styled.div`
         text-transform: lowercase;
         font-weight: 500;
         font-size: 1rem;
+        line-height: 1.125rem;
 
         .background {
           width: 0;
           height: 100%;
 
           position: absolute !important;
+          top: 0;
           left: 50%;
           transform: translateX(-50%);
           background-color: rgba(255, 255, 255, 0.05);
@@ -119,18 +121,26 @@ export const Hero = styled.div`
 
         &.link {
           border: 0;
+          width: 100%;
           background-color: transparent;
-          width: 5.15rem;
-          margin: auto;
-          border: 1px solid transparent;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           transition: all 0.4s;
 
+          .background {
+            width: 0;
+            height: 50px;
+            background: #b1b1b1;
+            opacity: 0.1;
+          }
+
           &:hover {
-            background-color: #242424;
-            border: 1px solid #242424;
-            width: 100%;
-            filter: brightness(1);
+            .background {
+              width: 100%;
+              z-index: 0;
+            }
           }
         }
       }

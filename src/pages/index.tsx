@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { PrismicRichText } from "@prismicio/react";
 import { Tooltip } from "@mui/material";
 
@@ -43,6 +44,8 @@ interface HomeProps {
  */
 
 export default function Home({ content, projects }: HomeProps): JSX.Element {
+  const router = useRouter();
+
   return (
     <Page>
       <Head>
@@ -78,9 +81,14 @@ export default function Home({ content, projects }: HomeProps): JSX.Element {
               Meus Projetos
               <span className="background" />
             </button>
-            <a href="/sobre" className="link">
+            <button
+              type="button"
+              onClick={() => router.push("/sobre")}
+              className="link"
+            >
               Sobre mim
-            </a>
+              <span className="background" />
+            </button>
           </div>
         </div>
         <div className="avatar">
