@@ -29,6 +29,7 @@
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
     "next": "11.1.2",
+    "node": "20",
     "nodemailer": "^6.7.3",
     "react": "17.0.2",
     "react-copy-to-clipboard": "^5.1.0",
