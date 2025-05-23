@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 ! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
 */
@@ -29,8 +33,9 @@ html {
 }
 
 body {
-  margin: 0;
-  line-height: inherit;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 hr {
@@ -418,7 +423,7 @@ body {
   --tw-contain-size: ;
   --tw-contain-layout: ;
   --tw-contain-paint: ;
-  --tw-contain-style: 
+  --tw-contain-style:    
 ;
 }
 
@@ -473,7 +478,7 @@ body {
   --tw-contain-size: ;
   --tw-contain-layout: ;
   --tw-contain-paint: ;
-  --tw-contain-style: 
+  --tw-contain-style:    
 ;
 }
 

@@ -1,0 +1,20 @@
+{
+  "root": {
+    "metadata": {
+      "title": "arthur sena | software engineer",
+      "description": ""
+    },
+    "header": {
+      "theme-toggle-label": "toggle theme",
+      "lang-picker-label": "choose language",
+      "lang-picker-title": "language",
+      "en": "english",
+      "pt": "portuguese"
+    }
+  },
+  "home": {
+    "hero": {
+      "hello": "hello! i'm sena"
+    }
+  }
+}
